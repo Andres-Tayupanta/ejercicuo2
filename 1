@@ -1,0 +1,19 @@
+#include <stdio.h>
+FILE *archivo;
+int main(void) {
+ /* if ((archivo=fopen("datos.txt","w"))!=NULL){
+    fputs(" clase de archivos",archivo);
+  }else{
+    printf("No se pudo abrir el archivo\n");
+  }*/
+
+  if ((archivo=fopen("datos.txt","a"))!=NULL){
+    fputs(" Tristemente se acabó el tiempo ",archivo);
+    fputs("\n",archivo);
+    fprintf(archivo,"%s, %d","Nota de Juan es",8);
+  }else{
+    printf("No se pudo abrir el archivo\n");
+  }
+  fclose(archivo);
+  return 0;
+}
